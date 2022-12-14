@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './features/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeadComponent } from './features/head/head.component';
-import { MatListModule } from '@angular/material/list';
+import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
 import { SharedModule } from './shared/shared.module';
-import { MatCardModule } from '@angular/material/card';
+import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
 
 @NgModule({
   declarations: [AppComponent, HeadComponent],
