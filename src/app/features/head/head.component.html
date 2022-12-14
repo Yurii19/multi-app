@@ -1,19 +1,39 @@
 <div class="head-container">
-  <mat-card>
-    <h3> Today : 
+  <mat-toolbar color="primary">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>
       <i> {{ date }}</i>
-    </h3>
-
-   
-  </mat-card>
-  <mat-list role="list">
-    <mat-list-item role="listitem"><a routerLink="/">Home</a></mat-list-item>
-    <mat-list-item role="listitem"
-      ><a routerLink="/currency">Currency</a></mat-list-item
+    </span>
+    <mat-divider inset vertical></mat-divider>
+    <mat-list role="list">
+      <mat-list-item role="listitem"><a routerLink="/">Home</a></mat-list-item>
+      <mat-list-item role="listitem"
+        ><a routerLink="/currency">Currency</a></mat-list-item
+      >
+      <mat-list-item role="listitem"
+        ><a routerLink="/weather">Weather</a></mat-list-item
+      >
+    </mat-list>
+    <span class="example-spacer"></span>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
     >
-    <mat-list-item role="listitem"
-      ><a routerLink="/weather">Weather</a></mat-list-item
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
     >
-  </mat-list>
- 
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
 </div>
