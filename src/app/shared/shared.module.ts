@@ -10,6 +10,7 @@ import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy
 import { CurrencyPageComponent } from '../features/currency-page/currency-page.component';
 import { WeatherPageComponent } from '../features/weather-page/weather-page.component';
 import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [CurrencyPageComponent, WeatherPageComponent],
@@ -22,7 +23,7 @@ import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-l
     MatButtonModule,
     HttpClientModule,
     MatTableModule,
-    MatListModule,
+    MatListModule,MatChipsModule
   ],
   exports: [CurrencyPageComponent, WeatherPageComponent],
 })

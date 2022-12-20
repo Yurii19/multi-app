@@ -1,8 +1,19 @@
 <div class="map-container">
-  <span
-    ><i>Selected point : </i>Lat : {{ lat | number: ".3" }}, Lat :
-    {{ long | number: ".3" }}</span
-  >
+  <div class="dialog">
+    <mat-chip-listbox aria-label="Fish selection">
+      <mat-chip color="primary" selected> Selected point : Lat : {{ lat | number: ".3" }}, Lon :
+        {{ long | number: ".3" }}</mat-chip>
+    </mat-chip-listbox>
+
+    <mat-chip-listbox aria-label="Fish selection" *ngIf="temperatureAtPoint">
+      <mat-chip [color]="messageColor" selected>
+        
+        Temperature at selected point is : {{ temperatureAtPoint }}. The nearest
+        populated locality - {{ city }}
+    </mat-chip>
+    </mat-chip-listbox>
+  </div>
+
   <div class="map-frame">
     <div id="map"></div>
   </div>
