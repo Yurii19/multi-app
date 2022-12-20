@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
+import { Icon, icon } from 'leaflet';
 import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
@@ -53,7 +54,14 @@ export class WeatherPageComponent implements OnInit, AfterViewInit {
         if (this.markers !== null) {
           this.map.removeLayer(this.markers);
         }
-        this.markers = L.marker(e.latlng).addTo(this.map);
+        this.markers = L.marker(e.latlng,{
+          icon: icon({
+            ...Icon.Default.prototype.options,
+            iconUrl: 'assets/marker-icon.png',
+            iconRetinaUrl: 'assets/marker-icon-2x.png',
+            shadowUrl: 'assets/marker-shadow.png'
+          })
+        }).addTo(this.map);
         if (this.temperatureAtPoint){
           this.temperatureAtPoint > 0 ? this.messageColor = 'warn' : this.messageColor = 'primary' ;
         }
