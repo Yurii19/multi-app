@@ -10,8 +10,11 @@ import { WeatherService } from 'src/app/services/weather.service';
 export class WeatherPageComponent implements OnInit, AfterViewInit {
   lat = 0;
   long = 0;
-
+  temperatureAtPoint = 0;
+  city = '';
+  markers: null | any = null;
   private map: any;
+  messageColor = 'primary';
 
   private initMap(): void {
     this.map = L.map('map', {
@@ -40,12 +43,22 @@ export class WeatherPageComponent implements OnInit, AfterViewInit {
     this.initMap();
 
     this.map.on('click', (e: any) => {
-      this.lat = e.latlng.lat;
-      this.long = e.latlng.lng;
-      console.log(e.latlng);
-      this.weather
-        .getWeather('https://api.coindesk.com/v1/bpi/currentprice.json')
-        .subscribe((resp) => console.log(resp));
+      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${e.latlng.lat}&lon=${e.latlng.lng}&appid=18141911a2204318380aeeac3872a83f&units=metric`;
+
+      this.weather.getWeather(url).subscribe((resp: any) => {
+        this.temperatureAtPoint = resp.main.temp;
+        this.city = resp.name;
+        this.lat = e.latlng.lat;
+        this.long = e.latlng.lng;
+        if (this.markers !== null) {
+          this.map.removeLayer(this.markers);
+        }
+        this.markers = L.marker(e.latlng).addTo(this.map);
+        if (this.temperatureAtPoint){
+          this.temperatureAtPoint > 0 ? this.messageColor = 'warn' : this.messageColor = 'primary' ;
+        }
+        
+      });
     });
   }
 }
