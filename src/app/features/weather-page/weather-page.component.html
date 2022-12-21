@@ -1,4 +1,6 @@
 <div class="map-container">
+  <mat-spinner *ngIf="isLoading" diameter="100"></mat-spinner>
+
   <div class="dialog">
     <mat-chip-listbox aria-label="Fish selection">
       <mat-chip-option>
