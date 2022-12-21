@@ -6,8 +6,7 @@
     </mat-chip-listbox>
 
     <mat-chip-listbox aria-label="Fish selection" *ngIf="temperatureAtPoint">
-      <mat-chip [color]="messageColor" selected>
-        
+      <mat-chip [color]="messageColor" color="accent" selected>
         Temperature at selected point is : {{ temperatureAtPoint }}. The nearest
         populated locality - {{ city }}
     </mat-chip>

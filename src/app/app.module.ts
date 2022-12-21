@@ -6,12 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './features/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeadComponent } from './features/head/head.component';
-import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
+// import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
 import { SharedModule } from './shared/shared.module';
-import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
+// import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [AppComponent, HeadComponent],
