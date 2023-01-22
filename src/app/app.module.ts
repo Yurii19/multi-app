@@ -16,18 +16,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [AppComponent, HeadComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
     BrowserAnimationsModule,
-    MatListModule,
     SharedModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatDividerModule,MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
