@@ -13,6 +13,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [AppComponent, HeadComponent],
@@ -26,7 +27,7 @@ import { BrowserModule } from '@angular/platform-browser';
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
-    MatDividerModule,
+    MatDividerModule,MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
