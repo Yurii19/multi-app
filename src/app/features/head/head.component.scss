@@ -1,22 +1,22 @@
-mat-list {
-  display: flex;
-  padding: 0;
-  margin: 0;
-}
+// mat-list {
+//   display: flex;
+//   padding: 0;
+//   margin: 0;
+// }
 
-.bottom-line {
-  border: 1px solid blue;
-}
-.example-spacer {
-  flex: 1 1 auto;
-}
+// .bottom-line {
+//   border: 1px solid blue;
+// }
+// .example-spacer {
+//   flex: 1 1 auto;
+// }
 a {
   text-decoration: none;
-  color: white;
+  // color: rgb(40, 255, 65);
 }
-::ng-deep{
-  .bg-red {
-    background-color: red;
-    color: white;
-  }
-}
+// ::ng-deep{
+//   .bg-red {
+//     background-color: red;
+//     color: white;
+//   }
+// }

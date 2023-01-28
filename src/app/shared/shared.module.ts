@@ -15,6 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { HeadComponent } from '../features/head/head.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { AppRoutingModule } from '../app-routing.module';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [CurrencyPageComponent, WeatherPageComponent, HeadComponent],
@@ -31,7 +33,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatChipsModule,
     MatProgressSpinnerModule,
     MatDividerModule,
+    AppRoutingModule,
     MatToolbarModule,
+    MatMenuModule,
   ],
   exports: [
     MatButtonModule,
