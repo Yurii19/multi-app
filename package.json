@@ -7,7 +7,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "start": "node server.js",
-  "postinstall": "ng build --aot -prod"
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.0.3",
-    "@angular/cli": "^15.0.3",
+    "@angular/cli": "^15.1.4",
     "@angular/compiler-cli": "^15.0.3",
     "@types/jasmine": "~3.8.0",
     "@types/leaflet": "^1.7.6",
