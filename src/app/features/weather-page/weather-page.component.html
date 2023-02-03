@@ -1,21 +1,7 @@
 <div class="map-container">
   <mat-spinner *ngIf="isLoading" diameter="100"></mat-spinner>
 
-  <div class="dialog">
-    <mat-chip-listbox aria-label="Fish selection">
-      <mat-chip-option>
-        Selected point : <i>Lat</i> : {{ lat | number : ".3" }}, <i>Lon</i> :
-        {{ long | number : ".3" }}</mat-chip-option
-      >
-    </mat-chip-listbox>
-
-    <mat-chip-listbox aria-label="Fish selection" *ngIf="temperatureAtPoint">
-      <mat-chip-option [color]="messageColor" selected>
-        Temperature at selected point is : {{ temperatureAtPoint }}. The nearest
-        populated locality - {{ city }}
-      </mat-chip-option>
-    </mat-chip-listbox>
-  </div>
+  <div class="dialog"></div>
 
   <div class="map-frame">
     <div id="map"></div>

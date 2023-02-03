@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import * as L from 'leaflet';
 import { Icon, icon } from 'leaflet';
 import { Subject } from 'rxjs';
@@ -42,7 +43,18 @@ export class WeatherPageComponent implements OnInit, OnDestroy, AfterViewInit {
     tiles.addTo(this.map);
   }
 
-  constructor(private weather: WeatherService) {}
+  constructor(
+    private weather: WeatherService,
+    private _snackBar: MatSnackBar
+  ) {}
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      panelClass: [
+        this.temperatureAtPoint > 0 ? 'warm-snackbar' : 'cold-snackbar',
+      ],
+    });
+  }
 
   ngOnInit(): void {}
 
@@ -78,6 +90,10 @@ export class WeatherPageComponent implements OnInit, OnDestroy, AfterViewInit {
               : (this.messageColor = 'primary');
           }
           this.isLoading = false;
+          this.openSnackBar(
+            `${this.city}:  ${this.temperatureAtPoint.toString()}`,
+            'Close'
+          );
         });
     });
   }

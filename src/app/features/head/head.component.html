@@ -12,16 +12,16 @@
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item *ngFor="let route of routes">
-        <a [routerLink]="route.routerLink">{{ route.name }}</a>
+        <a [routerLink]="route.routerLink" class="text-dark">{{ route.name }}</a>
       </button>
     </mat-menu>
     <span>
       <i class="text-warning"> {{ date }}</i>
     </span>
-    <mat-divider inset vertical></mat-divider>
+    <!-- <mat-divider inset vertical></mat-divider> -->
     <div class="d-none d-md-flex">
       <a
-        *ngFor="let route of routes"
+        *ngFor="let route of routes" 
         [routerLink]="route.routerLink"
         class="px-3 text-light"
         >{{ route.name }}</a

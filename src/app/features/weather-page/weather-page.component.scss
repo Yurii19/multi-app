@@ -31,3 +31,10 @@ span {
   margin-top: -50px; /* Negative half of height. */
   margin-left: -50px; /* Negative half of width. */
 }
+
+.message {
+  z-index: 999;
+  position: absolute;
+  right: 0;
+  padding: 0;
+}
