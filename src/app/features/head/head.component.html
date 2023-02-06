@@ -1,39 +1,51 @@
 <div class="head-container">
-  <mat-toolbar color="primary">
+  <mat-toolbar
+    color="primary"
+    class="d-flex justify-content-between justify-content-sm-start"
+  >
     <button
       mat-icon-button
-      class="example-icon"
+      [matMenuTriggerFor]="menu"
       aria-label="Example icon-button with menu icon"
     >
       <mat-icon>menu</mat-icon>
     </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item *ngFor="let route of routes">
+        <a [routerLink]="route.routerLink" class="text-dark">{{ route.name }}</a>
+      </button>
+    </mat-menu>
     <span>
-      <i> {{ date }}</i>
+      <i class="text-warning"> {{ date }}</i>
     </span>
-    <mat-divider inset vertical></mat-divider>
-    <mat-list role="list">
-      <mat-list-item role="listitem"><a routerLink="/">Home</a></mat-list-item>
-      <mat-list-item role="listitem"
-        ><a routerLink="/currency">Currency</a></mat-list-item
+    <!-- <mat-divider inset vertical></mat-divider> -->
+    <div class="d-none d-md-flex">
+      <a
+        *ngFor="let route of routes" 
+        [routerLink]="route.routerLink"
+        class="px-3 text-light"
+        >{{ route.name }}</a
       >
-      <mat-list-item role="listitem"
-        ><a routerLink="/weather">Weather</a></mat-list-item
+    </div>
+
+    <!-- </button> -->
+
+    <!-- <span class="example-spacer"></span> -->
+    <div class="left-buttons ms-auto p-2 bd-highlight">
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
       >
-    </mat-list>
-    <span class="example-spacer"></span>
-    <button
-      mat-icon-button
-      class="example-icon favorite-icon"
-      aria-label="Example icon-button with heart icon"
-    >
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button
-      mat-icon-button
-      class="example-icon"
-      aria-label="Example icon-button with share icon"
-    >
-      <mat-icon>share</mat-icon>
-    </button>
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with share icon"
+      >
+        <mat-icon>share</mat-icon>
+      </button>
+    </div>
   </mat-toolbar>
 </div>

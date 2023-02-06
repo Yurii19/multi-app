@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IRoute } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'head-component',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./head.component.scss'],
 })
 export class HeadComponent implements OnInit {
-  
   date: any;
+  routes: IRoute[] = [
+    { name: 'Home', routerLink: '/' },
+    { name: 'Currency', routerLink: '/currency' },
+    { name: 'Weather', routerLink: '/weather' },
+  ];
+
   constructor() {
     this.date = new Date().toDateString();
   }
