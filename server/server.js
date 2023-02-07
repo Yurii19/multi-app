@@ -1,25 +1,9 @@
-const path = require('path');
+// server.js
 const express = require('express');
-const compression = require('compression');
-
-const CONTEXT = `/${process.env.CONTEXT || ''}`;
-const PORT = process.env.PORT || 8080;
-
 const app = express();
-
-app.use(compression());
-app.use(
-  CONTEXT,
-  express.static(
-    path.resolve(__dirname, '../dist/discounti')
-  )
-);
-app.use(
-  '/',
-  express.static(
-    path.resolve(__dirname, '../dist/discounti')
-  )
-);
-app.listen(PORT, () =>
-  console.log(`App running on http://localhost:${PORT}${CONTEXT}`)
-);
+// Run the app by serving the static files
+// in the dist directory
+app.use(express.static(__dirname + '/dist'));
+// Start the app by listening on the default
+// Heroku port
+app.listen(process.env.PORT || 8080);
